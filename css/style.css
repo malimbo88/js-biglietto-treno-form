@@ -1,0 +1,22 @@
+/* myStyleCSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* HEADER */
+header h1 {
+  text-align: center;
+  padding: 20px 0;
+}
+/* MAIN */
+/* Form */
+.ticket_form {
+  background-color: yellow;
+  padding: 20px 10px;
+}
+/* Ticket */
+.ticket_generated {
+  background-color: pink;
+  padding: 20px 10px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Biglietto del Treno</title>
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header>
+      <h1>Calcola il prezzo del tuo biglietto</h1>
+    </header>
+    <!-- end HEADER -->
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- TICKET - form -->
+      <section class="ticket_form">
+
+        <!-- Form -->
+        <div class="form">
+
+          <!-- name & surname -->
+          <div class="name_surname">
+            <label>Name and surname</label>
+            <input id="form_name" type="text">
+          </div>
+          <!-- end name & surname -->
+
+          <!-- kilometers traveled -->
+          <div class="Km_traveled">
+            <label>Kilometers to go</label>
+            <input id="form_km" type="number">
+          </div>
+          <!-- end kilometers traveled -->
+
+          <!-- user age -->
+          <div class="age_range">
+            <label>Age range</label>
+            <select id="form_age">
+              <option value="minor">Minor</option>
+              <option value="adult">Adult</option>
+              <option value="over">Over 65</option>
+            </select>
+          </div>
+          <!-- end user age -->
+
+          <!-- buttons -->
+
+          <button id="button_gen">Generate</button>
+          <button id="button_reset">Reset</button>
+
+          <!-- end buttons -->
+        </div>
+
+        <!-- end Form -->
+
+      </section>
+      <!-- end TICKET - form -->
+
+
+      <!-- TICKET - generated -->
+      <section id="ticket" class="ticket_generated">
+
+        <!-- ticket -->
+        <div class="ticket_info">
+          <h2>Ticket</h2>
+          <h5>User name <span id="ticket_name"></span></h5>
+          <h5>price range <span id="ticket_range"></span></h5>
+          <h5>Wagon <span id="ticket_wagon"></span></h5>
+          <h5>Cp code <span id="ticket_cpcode"></span></h5>
+          <h5>Price <span id="ticket_price"></span></h5>
+        </div>
+        <!-- end ticket -->
+
+      </section>
+      <!-- end TICKET - generated -->
+
+    </main>
+    <!-- end MAIN -->
+
+
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
