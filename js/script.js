@@ -20,12 +20,13 @@ var ticketWagon = document.getElementById("ticket_wagon")
 //Button Generated
 buttonGen.addEventListener("click",
   function() {
-  if ((formName.value.length == 0) && (formKm.value.length == 0)) {
-    formName.value = "Invalid Name & Number";
+  if ((formName.value.length == 0) && (formKm.value == 0)) {
+    alert("Invalid Name & Number");
+    console.log(formKm.value)
   }else if (formName.value.length == 0) {
-    formName.value = "Invalid Name";
-  }else if (formKm.value.length == 0) {
-    formName.value = "Invalid Number";
+    alert("Invalid Name & Number");
+  }else if (formKm.value == 0) {
+    alert("Invalid Name & Number");
   }else {
     //Price
     var price = parseInt(formKm.value) * 0.21;
