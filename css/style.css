@@ -4,19 +4,79 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* HEADER */
-header h1 {
-  text-align: center;
-  padding: 20px 0;
+
+/* GENERAL */
+.container_flex {
+  display: flex;
 }
+
 /* MAIN */
-/* Form */
-.ticket_form {
+.main_wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.style_section {
+  padding:20px;
+  text-align: center;
+}
+
+.style_section h2 {
+  font-size: 32px;
+}
+
+.input_section {
   background-color: yellow;
-  padding: 20px 10px;
+}
+
+.ticket_section {
+  background-color: pink;
+}
+/* Input */
+.input {
+  padding-top: 20px;
+}
+
+.input > .container_flex {
+  justify-content: center;
+}
+
+.input > .container_flex > * {
+  padding: 0 10px;
+}
+
+.input label {
+  display: block;
+}
+
+.input_btn {
+  padding-top: 20px;
 }
 /* Ticket */
-.ticket_generated {
-  background-color: pink;
-  padding: 20px 10px;
+.ticket {
+  margin-top: 20px;
+  border: 1px solid #000;
+  height: 100px;
+}
+
+.ticket > .container_flex {
+  height: 100%;
+}
+
+.ticket > .container_flex > * {
+  margin-right: 20px;
+}
+
+.ticket_info {
+  padding: 10px 20px;
+}
+
+.ticket_info > .container_flex {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.ticket_info.ticket_name {
+  background-color: lightgray;
 }

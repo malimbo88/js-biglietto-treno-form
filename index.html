@@ -7,80 +7,112 @@
   </head>
   <body>
 
-    <!-- HEADER -->
-    <header>
-      <h1>Calcola il prezzo del tuo biglietto</h1>
-    </header>
-    <!-- end HEADER -->
-
     <!-- MAIN -->
     <main>
+      <div class="main_wrapper">
 
-      <!-- TICKET - form -->
-      <section class="ticket_form">
+        <!-- USER Input section -->
+        <section class="style_section input_section">
+            <h2>Calcola il prezzo del tuo biglietto</h2>
 
-        <!-- Form -->
-        <div class="form">
+          <!-- Input area -->
+          <div class="input">
 
-          <!-- name & surname -->
-          <div class="name_surname">
-            <label>Name and surname</label>
-            <input id="form_name" type="text">
+            <!-- input user info -->
+            <div class="container_flex">
+
+              <!-- name & surname -->
+              <div class="name_surname">
+                <label>Name and surname</label>
+                <input id="input_name" type="text">
+              </div>
+              <!-- end name & surname -->
+
+              <!-- kilometers traveled -->
+              <div class="Km_traveled">
+                <label>Kilometers to go</label>
+                <input id="input_km" type="number">
+              </div>
+              <!-- end kilometers traveled -->
+
+              <!-- user age -->
+              <div class="age_range">
+                <label>Age range</label>
+                <select id="input_age">
+                  <option value="minor">Minor</option>
+                  <option value="adult">Adult</option>
+                  <option value="over">Over 65</option>
+                </select>
+              </div>
+              <!-- end user age -->
+
+            </div>
+            <!-- input user info -->
+
+            <!-- buttons -->
+            <div class="input_btn">
+              <button id="button_gen" class="btn">Generate</button>
+              <button id="button_reset" class="btn">Reset</button>
+            </div>
+            <!-- end buttons -->
+
           </div>
-          <!-- end name & surname -->
+          <!-- end Input area -->
 
-          <!-- kilometers traveled -->
-          <div class="Km_traveled">
-            <label>Kilometers to go</label>
-            <input id="form_km" type="number">
-          </div>
-          <!-- end kilometers traveled -->
+        </section>
+        <!-- end USER input section -->
 
-          <!-- user age -->
-          <div class="age_range">
-            <label>Age range</label>
-            <select id="form_age">
-              <option value="minor">Minor</option>
-              <option value="adult">Adult</option>
-              <option value="over">Over 65</option>
-            </select>
-          </div>
-          <!-- end user age -->
+        <!-- TICKET section -->
+        <div id="wrapper_ticket" class="wrapper_ticket_section">
+          <section class="style_section ticket_section">
+            <h2>Your Ticket</h2>
 
-          <!-- buttons -->
+            <!-- ticket -->
+            <div class="ticket">
+              <div class="container_flex">
 
-          <button id="button_gen">Generate</button>
-          <button id="button_reset">Reset</button>
+                <!-- ticket info -->
+                <div class="ticket_info ticket_name">
+                  <h4>User name</h4>
+                  <span id="ticket_name">Nicola</span>
+                </div>
+                <div class="ticket_info">
+                  <div class="container_flex">
+                    <h4>Price range</h4>
+                    <span id="ticket_range">minor</span>
+                  </div>
+                </div>
+                <div class="ticket_info">
+                  <div class="container_flex">
+                    <h4>Wagon</h4>
+                    <span id="ticket_wagon"></span>
+                  </div>
+                </div>
+                <div class="ticket_info">
+                  <div class="container_flex">
+                    <h4>Cp code</h4>
+                    <span id="ticket_cpcode"></span>
+                  </div>
+                </div>
+                <div class="ticket_info">
+                  <div class="container_flex">
+                    <h4>Price</h4>
+                    <span id="ticket_price"></span>
+                  </div>
+                </div>
+                <!-- end ticket info -->
 
-          <!-- end buttons -->
+              </div>
+            </div>
+            <!-- end ticket -->
+
+          </section>
         </div>
+        <!-- end TICKET section -->
 
-        <!-- end Form -->
-
-      </section>
-      <!-- end TICKET - form -->
-
-
-      <!-- TICKET - generated -->
-      <section id="ticket" class="ticket_generated">
-
-        <!-- ticket -->
-        <div class="ticket_info">
-          <h2>Ticket</h2>
-          <h5>User name <span id="ticket_name"></span></h5>
-          <h5>price range <span id="ticket_range"></span></h5>
-          <h5>Wagon <span id="ticket_wagon"></span></h5>
-          <h5>Cp code <span id="ticket_cpcode"></span></h5>
-          <h5>Price <span id="ticket_price"></span></h5>
-        </div>
-        <!-- end ticket -->
-
-      </section>
-      <!-- end TICKET - generated -->
-
+      </div>
     </main>
     <!-- end MAIN -->
-
 
     <script type="text/javascript" src="js/script.js"></script>
   </body>
