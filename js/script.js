@@ -54,6 +54,11 @@ function() {
 //ButtonReset
 buttonReset.addEventListener("click",
 function() {
+  //input.value
+  inputName.value = "";
+  inputKm.value = "";
+  inputAge.value = "--";
+
   //input.innerHTML
   ticketName.innerHTML = "";
   ticketPrice.innerHTML = "";
