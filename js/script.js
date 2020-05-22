@@ -1,72 +1,65 @@
 //myJavaScript
 
-//Button Element
+//elementButton
 var buttonGen = document.getElementById("button_gen");
 var buttonReset = document.getElementById("button_reset");
 
-//Form Element
-var formName = document.getElementById("form_name");
-var formKm = document.getElementById("form_km");
-var formAge = document.getElementById("form_age");
 
+//elementInput
+var inputName = document.getElementById("input_name");
+var inputKm = document.getElementById("input_km");
+var inputAge = document.getElementById("input_age");
 
-//Ticket getElementById
+//elementTicket
 var ticketName = document.getElementById("ticket_name");
-var ticketRange = document.getElementById("ticket_range")
-var ticketPrice = document.getElementById("ticket_price")
-var ticketCpCode = document.getElementById("ticket_cpcode")
-var ticketWagon = document.getElementById("ticket_wagon")
+var ticketRange = document.getElementById("ticket_range");
+var ticketPrice = document.getElementById("ticket_price");
 
-//Button Generated
+
+//buttonGen
 buttonGen.addEventListener("click",
-  function() {
-  if ((formName.value.length == 0) && (formKm.value == 0)) {
-    alert("Invalid Name & Number");
-    console.log(formKm.value)
-  }else if (formName.value.length == 0) {
-    alert("Invalid Name & Number");
-  }else if (formKm.value == 0) {
-    alert("Invalid Name & Number");
+function() {
+  //priceCalc
+  var km = parseInt(inputKm.value);
+  var age = inputAge.value;
+  var price = km * 0.21;
+
+  //discountCalc
+  var discountMinor = (price / 100 * 20);
+  var discountOver = (price / 100 * 40);
+
+  if(age == "minor") {
+    price = price - discountMinor;
+  }else if (age == "over") {
+    price = price - discountOver;
+  }
+
+  //input.innerHTML
+  ticketName.innerHTML = inputName.value;
+  ticketPrice.innerHTML = (price).toFixed(2) + " $"
+
+  //input.innerHTML ticketRange
+  if(age == "minor") {
+    ticketRange.innerHTML = inputAge.value + " 20% off" + " (" + (discountMinor).toFixed(2) + " $)";
+  }else if (age == "over") {
+    ticketRange.innerHTML = inputAge.value + " 40% off" + " (" + (discountOver).toFixed(2) + " $)";
   }else {
-    //Price
-    var price = parseInt(formKm.value) * 0.21;
-    if (formAge.value == "minor") {
-      price = price - (price / 100 * 20);
-    } else if (formAge.value == "over") {
-      price = price - (price / 100 * 40);
-    }
-
-    //generate INFO - TICKET
-    ticketName.innerHTML = formName.value;
-
-    //ticket range
-    ticketRange.innerHTML = formAge.value + " standard price";
-    if (formAge.value == "minor") {
-      ticketRange.innerHTML = formAge.value + " 20% discount";
-    } else if (formAge.value == "over") {
-      ticketRange.innerHTML = formAge.value + " 40% discount";
-    }
-
-    ticketPrice.innerHTML = price.toFixed(2) + " Euro";
-    ticketWagon.innerHTML = Math.floor(Math.random() * 20);
-    ticketCpCode.innerHTML = Math.floor(Math.random() * 1000000);
-
+    ticketRange.innerHTML = inputAge.value + " standard price";
   }
-  }
+
+}
 );
 
-//Button Reset
-buttonReset.addEventListener("click",
-  function() {
-    //reset info ticket
-  formName.value = "";
-  ticketName.innerHTML = "";
-  formKm.value = "";
-  formAge.value = "minor";
-  ticketRange.innerHTML = "";
-  ticketPrice.innerHTML = "";
-  ticketWagon.innerHTML = "";
-  ticketCpCode.innerHTML = "";
 
-  }
+//ButtonReset
+buttonReset.addEventListener("click",
+function() {
+  //input.innerHTML
+  ticketName.innerHTML = "";
+  ticketPrice.innerHTML = "";
+  ticketRange.innerHTML = "";
+
+
+
+}
 );
