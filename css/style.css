@@ -53,6 +53,14 @@
   padding-top: 20px;
 }
 /* Ticket */
+.wrapper_none {
+  display: none;
+}
+
+.wrapper_visible {
+  display: visible;
+}
+
 .ticket {
   margin-top: 20px;
   border: 1px solid #000;
