@@ -6,53 +6,22 @@
 }
 
 /* GENERAL */
+body {
+  background-color: #b81351;
+  font-family: "Roboto", sans-serif;
+}
+
 .container_flex {
   display: flex;
 }
 
 /* MAIN */
+/* wrapper */
 .main_wrapper {
   width: 80%;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 
-.style_section {
-  padding:20px;
-  text-align: center;
-}
-
-.style_section h2 {
-  font-size: 32px;
-}
-
-.input_section {
-  background-color: yellow;
-}
-
-.ticket_section {
-  background-color: pink;
-}
-/* Input */
-.input {
-  padding-top: 20px;
-}
-
-.input > .container_flex {
-  justify-content: center;
-}
-
-.input > .container_flex > * {
-  padding: 0 10px;
-}
-
-.input label {
-  display: block;
-}
-
-.input_btn {
-  padding-top: 20px;
-}
-/* Ticket */
 .wrapper_none {
   display: none;
 }
@@ -61,30 +30,187 @@
   display: visible;
 }
 
-.ticket {
-  margin-top: 20px;
+/* style section */
+.style_section {
+  padding: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.style_section h2,
+.style_section h3,
+.style_section h4,
+.style_section label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.style_section h2,
+.style_section h4 {
+  color: #fff;
+}
+
+.style_section h2 {
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+
+.style_section h3 {
+  font-size: 15px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.style_section h4 {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.style_section h5 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.style_section span {
+  text-transform: uppercase;
+}
+
+.style_section label {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 15px;
+  padding-bottom: 10px;
+  color: #b81351;
+}
+
+/* btn */
+.btn > * {
+  padding: 5px 10px;
+  border-radius: 2.5px;
   border: 1px solid #000;
-  height: 100px;
+  background-color: #cccccc;
+  color: #b81351;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
 }
 
-.ticket > .container_flex {
-  height: 100%;
+.btn > *:focus {
+  background-color: #999999;
+  color: #fff;
 }
 
-.ticket > .container_flex > * {
-  margin-right: 20px;
+.btn > *:hover {
+  color: #fff;
+  background-color: #b81351;
+}
+
+/* Input */
+.input {
+  padding: 10px 20px 20px 20px;
+  box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.input > .container_flex {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.input > .container_flex > * {
+  padding: 10px 10px;
+}
+
+.input_error {
+  margin: 20px 20px 0px 20px;
+  padding: 20px;
+  background-color: #cc0000;
+}
+
+.input label {
+  display: block;
+}
+
+.input select {
+  color: #999999;
+}
+
+.input input,
+.input select {
+  padding: 2.5px 5px;
+  border: 1px solid #b81351;
+  border-radius: 2.5px;
+}
+
+.input input::placeholder {
+  color: #999999;
+}
+
+.input input:focus {
+  color: #fff;
+  background-color: #b81351;
+}
+
+.input input:focus::placeholder {
+  color: #fff;
+}
+
+.input select:focus {
+  color: #fff;
+  background-color: #b81351;
+}
+
+.input select:focus::placeholder {
+  color: #fff;
+}
+
+.input_btn {
+  padding-top: 20px;
+}
+
+.input .btn * {
+  margin:0px 5px;
+}
+
+/* Ticket */
+.ticket {
+  background-color: #fff;
+  text-align: left;
+  padding: 20px;
 }
 
 .ticket_info {
-  padding: 10px 20px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
 }
 
 .ticket_info > .container_flex {
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  justify-content: flex-start;
 }
 
-.ticket_info.ticket_name {
-  background-color: lightgray;
+.ticket_info > .container_flex > * {
+  height: 100px;
+  flex-basis: 20%;
+}
+
+.ticket_info > .container_flex > .ticket_name {
+  flex-basis: 20%;
+  background-color: #cccccc;
+}
+
+.ticket_info_box {
+  padding: 10px 10px;
+  border-right: 1px solid #000;
+}
+
+.ticket_info_box > .container_flex {
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket_info_box > .container_flex > * {
+  flex-basis: 20%;
 }

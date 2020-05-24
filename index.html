@@ -2,6 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Biglietto del Treno</title>
   </head>
@@ -12,7 +15,7 @@
       <div class="main_wrapper">
 
         <!-- USER Input section -->
-        <section class="style_section input_section">
+        <section class="style_section">
             <h2>Calcola il prezzo del tuo biglietto</h2>
 
           <!-- Input area -->
@@ -24,14 +27,14 @@
               <!-- name & surname -->
               <div class="name_surname">
                 <label>Name and surname</label>
-                <input id="input_name" type="text">
+                <input id="input_name" type="text" placeholder="&#10004; Name and surname">
               </div>
               <!-- end name & surname -->
 
               <!-- kilometers traveled -->
               <div class="Km_traveled">
                 <label>Kilometers to go</label>
-                <input id="input_km" type="number">
+                <input id="input_km" type="number" placeholder="&#10004; Kilometers to go">
               </div>
               <!-- end kilometers traveled -->
 
@@ -39,10 +42,10 @@
               <div class="age_range">
                 <label>Age range</label>
                 <select id="input_age">
-                  <option value="--">--</option>
-                  <option value="minor">Minor</option>
-                  <option value="adult">Adult</option>
-                  <option value="over">Over 65</option>
+                  <option class="null_option" value="--">--</option>
+                  <option value="minor">Minor (0 > 18)</option>
+                  <option value="adult">Adult (18 > 65)</option>
+                  <option value="over">Over (< 65)</option>
                 </select>
               </div>
               <!-- end user age -->
@@ -52,10 +55,20 @@
 
             <!-- buttons -->
             <div class="input_btn">
-              <button id="button_gen" class="btn">Generate</button>
-              <button id="button_reset" class="btn">Reset</button>
+              <div class="btn">
+                <button id="button_gen">Generate</button>
+                <button id="button_reset">&#8634; Reset</button>
+              </div>
             </div>
             <!-- end buttons -->
+
+            <div id="wrapper_error" class="wrapper_none">
+              <div class="input_error">
+                <h4>&#9888; Error!</h4>
+                <p>Please insert the data correctly: enter your name followed by your surname.
+                  enter a number of kilometers to go and select the age range.</p>
+              </div>
+            </div>
 
           </div>
           <!-- end Input area -->
@@ -65,48 +78,51 @@
 
         <!-- TICKET section -->
         <div id="wrapper_ticket" class="wrapper_none">
-          <section class="style_section ticket_section">
+          <section class="style_section">
             <h2>Your Ticket</h2>
 
             <!-- ticket -->
             <div class="ticket">
-              <div class="container_flex">
+              <h3>passenger details</h3>
 
-                <!-- ticket info -->
-                <div class="ticket_info ticket_name">
-                  <h4>User name</h4>
-                  <span id="ticket_name"></span>
-                </div>
-                <div class="ticket_info">
-                  <div class="container_flex">
-                    <h4>Price range</h4>
-                    <span id="ticket_range"></span>
+              <!-- ticket info -->
+              <div class="ticket_info">
+                <div class="container_flex">
+                  <div class="ticket_info_box ticket_name">
+                    <h3>User name</h3>
+                    <span id="ticket_name"></span>
                   </div>
-                </div>
-                <div class="ticket_info">
-                  <div class="container_flex">
-                    <h4>Wagon</h4>
-                    <span id="ticket_wagon"></span>
+                  <div class="ticket_info_box">
+                    <div class="container_flex">
+                      <h5>Age range</h5>
+                      <span id="ticket_range"></span>
+                    </div>
                   </div>
-                </div>
-                <div class="ticket_info">
-                  <div class="container_flex">
-                    <h4>Cp code</h4>
-                    <span id="ticket_cpcode"></span>
+                  <div class="ticket_info_box">
+                    <div class="container_flex">
+                      <h5>Wagon</h5>
+                      <span id="ticket_wagon"></span>
+                    </div>
                   </div>
-                </div>
-                <div class="ticket_info">
-                  <div class="container_flex">
-                    <h4>Price</h4>
-                    <span id="ticket_price"></span>
+                  <div class="ticket_info_box">
+                    <div class="container_flex">
+                      <h5>Cp code</h5>
+                      <span id="ticket_cpcode"></span>
+                    </div>
+                  </div>
+                  <div class="ticket_info_box">
+                    <div class="container_flex">
+                      <h5>Price</h5>
+                      <span id="ticket_price"></span>
+                    </div>
                   </div>
                 </div>
                 <!-- end ticket info -->
 
               </div>
-            </div>
-            <!-- end ticket -->
+              <!-- end ticket -->
 
+            </div>
           </section>
         </div>
         <!-- end TICKET section -->

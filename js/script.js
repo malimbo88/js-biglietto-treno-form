@@ -6,6 +6,8 @@ var buttonReset = document.getElementById("button_reset");
 
 //showOrHide Ticket
 var showHide = document.getElementById("wrapper_ticket");
+//showOrHide error
+var error = document.getElementById("wrapper_error");
 
 //elementInput
 var inputName = document.getElementById("input_name");
@@ -28,8 +30,12 @@ function() {
 
 //showOrHide Ticket conditional statements
 if ((inputName.value == "") || (inputKm.value == "") || (age == "--") || (km == 0)) {
-  //showOrHide Ticket
+
+  //showOrHide ticket
   showHide.className = "wrapper_none"
+
+  //showOrHide error
+  error.className = "wrapper_visible"
 
 }else {
   //price Calc
@@ -45,10 +51,13 @@ if ((inputName.value == "") || (inputKm.value == "") || (age == "--") || (km == 
     price = price - discountOver;
   }
 
-  //input.innerHTML
-  ticketName.innerHTML = inputName.value;
-  ticketWagon.innerHTML = Math.floor(Math.random() * 10);
+  //ticketPrice input.inner.HTML
   ticketPrice.innerHTML = (price).toFixed(2) + " $";
+
+  //ticketWagon input.innerHTML
+  if (ticketWagon.innerHTML == "") {
+    ticketWagon.innerHTML = Math.floor(Math.random() * 20 + 1);
+  }
 
   //input.innerHTML ticketRange
   if (age == "minor") {
@@ -59,35 +68,43 @@ if ((inputName.value == "") || (inputKm.value == "") || (age == "--") || (km == 
     ticketRange.innerHTML = inputAge.value + " standard price";
   }
 
-  //CpCode Calc
-  var cpDate = new Date();
-  var cpYear = cpDate.getFullYear();
-  var cpDay = cpDate.getDay();
-  var cpName = (inputName.value).substring(0, 1);
+  //ticketCpCode.innerHTML
+  if (ticketCpCode.innerHTML == "") {
+    //CpCode Calc
+    var cpDate = new Date();
+    var cpYear = cpDate.getFullYear();
+    var cpDay = cpDate.getDay();
+    var cpName = (inputName.value).substring(0, 1);
 
-  //CpDate.getDay Conversion
-  if (cpDay == 0) {
-    cpDay = "MON";
-  }else if (cpDay == 1) {
-    cpDay = "TUE";
-  }else if (cpDay == 2) {
-    cpDay = "WED";
-  }else if (cpDay == 3) {
-    cpDay = "THU";
-  }else if (cpDay == 4) {
-    cpDay = "FRI";
-  }else if (cpDay == 5) {
-    cpDay = "SAT";
-  }else if (cpDay == 6) {
-    cpDay = "SUN";
+    //CpDate.getDay Conversion
+    if (cpDay == 0) {
+      cpDay = "MON";
+    }else if (cpDay == 1) {
+      cpDay = "TUE";
+    }else if (cpDay == 2) {
+      cpDay = "WED";
+    }else if (cpDay == 3) {
+      cpDay = "THU";
+    }else if (cpDay == 4) {
+      cpDay = "FRI";
+    }else if (cpDay == 5) {
+      cpDay = "SAT";
+    }else if (cpDay == 6) {
+      cpDay = "SUN";
+    }
+
+    //input.innerHTML ticketCpCode
+    ticketCpCode.innerHTML = "CP" + cpYear + cpDay + Math.floor(Math.random() * 1000) + cpName.toUpperCase();
   }
 
-  //input.innerHTML ticketCpCode
-  ticketCpCode.innerHTML = "CP" + cpYear + cpDay + Math.floor(Math.random() * 1000) + cpName.toUpperCase();
+  //input.innerHTML
+  ticketName.innerHTML = inputName.value;
+
+  //showOrHide error
+  error.className = "wrapper_none";
 
   //showOrHide Ticket
   showHide.className = "wrapper_visible";
-
 }
 //END showOrHide Ticket conditional statements
 
@@ -99,6 +116,8 @@ buttonReset.addEventListener("click",
 function() {
   //showOrHide Ticket
   showHide.className = "wrapper_none"
+  //showOrHide error
+  error.className = "wrapper_none"
 
   //input.value
   inputName.value = "";
